@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">Android Blog Example with Kotlin</string>
+    <string name="app_name">app-kotlin</string>
+    <string name="action_settings">Settings</string>
 </resources>

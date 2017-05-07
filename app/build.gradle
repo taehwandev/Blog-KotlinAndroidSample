@@ -6,7 +6,7 @@ android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
     defaultConfig {
-        applicationId "tech.thdev.androidblogexamplewithkotlin"
+        applicationId "tech.thdev.overlaysample"
         minSdkVersion 16
         targetSdkVersion 25
         versionCode 1

@@ -1,4 +1,4 @@
-package tech.thdev.androidblogexamplewithkotlin
+package tech.thdev.overlaysample
 
 import org.junit.Test
 
