@@ -7,6 +7,7 @@ buildscript {
         support_library_version = '25.3.1'
 
         th_support_kotlin_base_version = '1.0.0'
+        constraint_layout_version = '1.0.2'
     }
     repositories {
         jcenter()
