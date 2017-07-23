@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 import tech.thdev.blog_kotlinandroidsample.R
+import tech.thdev.blog_kotlinandroidsample.view.main.like.LikeFragment
 import tech.thdev.blog_kotlinandroidsample.view.main.search.SearchFragment
 
 class MainActivity : LifecycleActivity() {
@@ -12,10 +13,11 @@ class MainActivity : LifecycleActivity() {
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navigation_search -> {
-                supportFragmentManager.beginTransaction().replace(R.id.container, SearchFragment()).commit()
+                supportFragmentManager.beginTransaction().replace(R.id.container, SearchFragment.INSTANCE).commit()
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_like -> {
+                supportFragmentManager.beginTransaction().replace(R.id.container, LikeFragment.INSTANCE).commit()
                 return@OnNavigationItemSelectedListener true
             }
         }
@@ -27,5 +29,7 @@ class MainActivity : LifecycleActivity() {
         setContentView(R.layout.activity_main)
 
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+
+        supportFragmentManager.beginTransaction().add(R.id.container, SearchFragment.INSTANCE).commit()
     }
 }

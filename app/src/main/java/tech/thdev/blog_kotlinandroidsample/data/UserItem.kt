@@ -8,4 +8,4 @@ data class UserItem(val login: String,
                     val avatar_url: String,
                     val html_url: String,
                     val score: Float,
-                    var like: Boolean = false)
+                    var isLike: Boolean = false)

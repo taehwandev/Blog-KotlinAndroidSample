@@ -5,11 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <android.support.v4.widget.CircleImageView
+    <ImageView
         android:id="@+id/circle_iv_user"
         android:layout_width="@dimen/user_image_size"
         android:layout_height="@dimen/user_image_size"
         android:padding="@dimen/padding_user_list"
+        android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/tv_user_name"

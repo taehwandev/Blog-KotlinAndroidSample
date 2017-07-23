@@ -4,6 +4,7 @@ import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.ViewGroup
 import tech.thdev.blog_kotlinandroidsample.common.adapter.holder.UserViewHolder
+import tech.thdev.blog_kotlinandroidsample.common.adapter.view_model.UserListViewModel
 import tech.thdev.blog_kotlinandroidsample.data.UserItem
 
 /**
@@ -12,16 +13,14 @@ import tech.thdev.blog_kotlinandroidsample.data.UserItem
 
 class UserListAdapter(val context: Context) : RecyclerView.Adapter<UserViewHolder>(){
 
-    val list = mutableListOf<UserItem>()
-
-    lateinit var onClickListener: (Int) -> Unit
+    val userListViewModel = UserListViewModel()
 
     override fun onBindViewHolder(holder: UserViewHolder?, position: Int) {
-        holder?.onBindViewHolder(list[position], position)
+        holder?.onBindViewHolder(userListViewModel.getItem(position))
     }
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int) =
             UserViewHolder(this, parent)
 
-    override fun getItemCount() = list.size
+    override fun getItemCount() = userListViewModel.list.size
 }

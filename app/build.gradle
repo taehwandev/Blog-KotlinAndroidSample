@@ -42,6 +42,21 @@ dependencies {
     annotationProcessor "android.arch.persistence.room:compiler:$architectureComponentsVersion"
     implementation "android.arch.persistence.room:rxjava2:$architectureComponentsVersion"
 
+    // GitHub
+    // http://square.github.io/retrofit/
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
+
+    // OkHttp
+    // https://github.com/square/okhttp
+    implementation "com.squareup.okhttp3:okhttp:$okhttpVersion"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttpVersion"
+
+    // RxJava
+    implementation "io.reactivex.rxjava2:rxandroid:$rxandroidVersion"
+    implementation "io.reactivex.rxjava2:rxjava:$rxjavaVersion"
+
     // Glide
     implementation 'com.github.bumptech.glide:glide:4.0.0-RC1'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.0.0-RC1'

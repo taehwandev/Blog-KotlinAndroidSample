@@ -1,4 +1,4 @@
-package tech.thdev.blog_kotlinandroidsample.view.main.search
+package tech.thdev.blog_kotlinandroidsample.view.main.like
 
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
@@ -8,23 +8,23 @@ import tech.thdev.base.view.BaseFragment
 import tech.thdev.blog_kotlinandroidsample.R
 import tech.thdev.blog_kotlinandroidsample.common.adapter.UserListAdapter
 import tech.thdev.blog_kotlinandroidsample.data.source.data.search.UserSearchRepository
-import tech.thdev.blog_kotlinandroidsample.view.main.search.view_model.SearchViewModel
+import tech.thdev.blog_kotlinandroidsample.view.main.like.view_model.LikeViewModel
 
 /**
  * Created by Taehwan on 21/07/2017.
  */
 
-class SearchFragment : BaseFragment() {
+class LikeFragment : BaseFragment() {
 
     companion object {
-        val INSTANCE: SearchFragment by lazy {
-            SearchFragment()
+        val INSTANCE: LikeFragment by lazy {
+            LikeFragment()
         }
     }
 
     private lateinit var userListAdapter: UserListAdapter
 
-    private lateinit var searchViewModel: SearchViewModel
+    private lateinit var likeViewModel: LikeViewModel
 
     override fun getLayoutResource() = R.layout.fragment_list
 
@@ -34,17 +34,17 @@ class SearchFragment : BaseFragment() {
         userListAdapter = UserListAdapter(context)
 
         recycler_view.apply {
-            layoutManager = LinearLayoutManager(context)
             adapter = userListAdapter
+            layoutManager = LinearLayoutManager(context)
         }
 
-        searchViewModel = SearchViewModel(UserSearchRepository, userListAdapter)
-        searchViewModel.showProgress = {
+        likeViewModel = LikeViewModel(UserSearchRepository, userListAdapter)
+        likeViewModel.showProgress = {
 
         }
-        searchViewModel.hideProgress = {
+        likeViewModel.hideProgress = {
 
         }
-        searchViewModel.searchGitHubUser("tom+repos:>42")
+        likeViewModel.searchGitHubUser("taehwandev")
     }
 }
