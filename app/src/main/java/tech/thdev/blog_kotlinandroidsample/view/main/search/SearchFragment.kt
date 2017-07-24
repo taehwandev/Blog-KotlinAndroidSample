@@ -9,6 +9,7 @@ import tech.thdev.blog_kotlinandroidsample.R
 import tech.thdev.blog_kotlinandroidsample.common.adapter.UserListAdapter
 import tech.thdev.blog_kotlinandroidsample.data.source.data.search.UserSearchRepository
 import tech.thdev.blog_kotlinandroidsample.view.main.search.view_model.SearchViewModel
+import tech.thdev.lifecycle.extensions.inject
 
 /**
  * Created by Taehwan on 21/07/2017.
@@ -38,7 +39,7 @@ class SearchFragment : BaseFragment() {
             adapter = userListAdapter
         }
 
-        searchViewModel = SearchViewModel(UserSearchRepository, userListAdapter)
+        searchViewModel = SearchViewModel(UserSearchRepository, userListAdapter).inject(this)
         searchViewModel.showProgress = {
 
         }

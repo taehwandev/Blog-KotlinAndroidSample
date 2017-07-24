@@ -20,6 +20,9 @@ buildscript {
     repositories {
         google()
         jcenter()
+        maven {
+            url  "http://dl.bintray.com/taehwandev/thdev.tech/"
+        }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.0.0-alpha7'
@@ -35,6 +38,9 @@ allprojects {
         google()
         jcenter()
         mavenCentral()
+        maven {
+            url  "http://dl.bintray.com/taehwandev/thdev.tech/"
+        }
     }
 }
 

@@ -28,8 +28,8 @@ class MainActivity : LifecycleActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+        supportFragmentManager.beginTransaction().replace(R.id.container, SearchFragment.INSTANCE).commit()
 
-        supportFragmentManager.beginTransaction().add(R.id.container, SearchFragment.INSTANCE).commit()
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
     }
 }
