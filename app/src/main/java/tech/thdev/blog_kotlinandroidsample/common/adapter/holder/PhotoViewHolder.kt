@@ -5,18 +5,18 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.bumptech.glide.Glide
-import kotlinx.android.synthetic.main.item_user_info.view.*
+import kotlinx.android.synthetic.main.item_photo_view.view.*
 import tech.thdev.blog_kotlinandroidsample.R
 import tech.thdev.blog_kotlinandroidsample.common.adapter.UserListAdapter
-import tech.thdev.blog_kotlinandroidsample.data.UserItem
+import tech.thdev.blog_kotlinandroidsample.data.Photo
 
 /**
  * Created by Taehwan on 21/07/2017.
  */
 
-class UserViewHolder(val adapter: UserListAdapter,
-                     parent: ViewGroup?) :
-        RecyclerView.ViewHolder(LayoutInflater.from(adapter.context).inflate(R.layout.item_user_info, parent, false)) {
+class PhotoViewHolder(val adapter: UserListAdapter,
+                      parent: ViewGroup?) :
+        RecyclerView.ViewHolder(LayoutInflater.from(adapter.context).inflate(R.layout.item_photo_view, parent, false)) {
 
     init {
         itemView.setOnClickListener {
@@ -25,13 +25,11 @@ class UserViewHolder(val adapter: UserListAdapter,
     }
 
     @SuppressLint("RestrictedApi")
-    fun onBindViewHolder(item: UserItem) {
+    fun onBindViewHolder(item: Photo) {
         itemView.run {
             Glide.with(adapter.context)
-                    .load(item.avatar_url)
+                    .load(item.getImageUrl())
                     .into(circle_iv_user)
-            tv_user_name.text = item.login
-            checkbox.isChecked = item.isLike
         }
     }
 }

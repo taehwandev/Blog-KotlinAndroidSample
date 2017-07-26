@@ -20,12 +20,9 @@ buildscript {
     repositories {
         google()
         jcenter()
-        maven {
-            url  "http://dl.bintray.com/taehwandev/thdev.tech/"
-        }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.0-alpha7'
+        classpath 'com.android.tools.build:gradle:3.0.0-alpha8'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 
         // NOTE: Do not place your application dependencies here; they belong
@@ -38,12 +35,16 @@ allprojects {
         google()
         jcenter()
         mavenCentral()
-        maven {
-            url  "http://dl.bintray.com/taehwandev/thdev.tech/"
-        }
     }
 }
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+// FlickrAPI key는 local.properties에 "flickrApiKey="생성한 키""를 등록하면 됩니다
+ext {
+    Properties properties = new Properties()
+    properties.load(project.rootProject.file('local.properties').newDataInputStream())
+    flickrApiKey = properties.getProperty('flickrApiKey', "\"\"")
 }

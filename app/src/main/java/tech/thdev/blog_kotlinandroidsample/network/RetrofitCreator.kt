@@ -18,7 +18,7 @@ fun <T> createRetrofit(clazz: Class<T>, baseUrl: String) =
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .client(createOkHttpClient())
-                .build().create(clazz)
+                .build().create(clazz)!!
 
 private fun createOkHttpClient() =
         OkHttpClient.Builder().apply {

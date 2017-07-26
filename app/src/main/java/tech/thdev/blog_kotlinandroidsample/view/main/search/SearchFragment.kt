@@ -1,12 +1,13 @@
 package tech.thdev.blog_kotlinandroidsample.view.main.search
 
 import android.os.Bundle
-import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.StaggeredGridLayoutManager
 import android.view.View
 import kotlinx.android.synthetic.main.fragment_list.*
 import tech.thdev.base.view.BaseFragment
 import tech.thdev.blog_kotlinandroidsample.R
 import tech.thdev.blog_kotlinandroidsample.common.adapter.UserListAdapter
+import tech.thdev.blog_kotlinandroidsample.common.adapter.view_model.UserListViewModel
 import tech.thdev.blog_kotlinandroidsample.data.source.data.search.UserSearchRepository
 import tech.thdev.blog_kotlinandroidsample.view.main.search.view_model.SearchViewModel
 import tech.thdev.lifecycle.extensions.inject
@@ -32,10 +33,10 @@ class SearchFragment : BaseFragment() {
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        userListAdapter = UserListAdapter(context)
+        userListAdapter = UserListAdapter(context, UserListViewModel().inject(this))
 
         recycler_view.apply {
-            layoutManager = LinearLayoutManager(context)
+            layoutManager = StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL)
             adapter = userListAdapter
         }
 
@@ -46,6 +47,6 @@ class SearchFragment : BaseFragment() {
         searchViewModel.hideProgress = {
 
         }
-        searchViewModel.searchGitHubUser("tom+repos:>42")
+        searchViewModel.searchGitHubUser("seoul")
     }
 }
