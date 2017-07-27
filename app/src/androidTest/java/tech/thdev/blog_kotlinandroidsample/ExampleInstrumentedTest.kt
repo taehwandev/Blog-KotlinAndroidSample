@@ -1,6 +1,5 @@
-package tech.thdev.androidblogexamplewithkotlin
+package tech.thdev.blog_kotlinandroidsample
 
-import android.content.Context
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
 
@@ -10,18 +9,16 @@ import org.junit.runner.RunWith
 import org.junit.Assert.*
 
 /**
- * Instrumentation test, which will execute on an Android device.
-
- * @see [Testing documentation](http://d.android.com/tools/testing)
+ * Instrumented test, which will execute on an Android device.
+ *
+ * See [testing documentation](http://d.android.com/tools/testing).
  */
 @RunWith(AndroidJUnit4::class)
 class ExampleInstrumentedTest {
     @Test
-    @Throws(Exception::class)
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getTargetContext()
-
-        assertEquals("tech.thdev.androidblogexamplewithkotlin", appContext.packageName)
+        assertEquals("tech.thdev.blog_kotlinandroidsample", appContext.packageName)
     }
 }
